@@ -1,0 +1,92 @@
+.siter-footer {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-color: #262626;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    .sidebar-footer {
+        color: #818181;
+        word-wrap: break-word;
+        &.col {
+            @include mediaQuery(767px) {
+                -ms-flex: 0 0 auto;
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        h5 {
+            color: #fff;
+            font-family: $fontNormal;
+            font-size: 20px;
+            letter-spacing: -1px;
+            line-height: 30px;
+            font-weight: 600;
+            text-transform: none;
+            font-style: normal
+        }
+        img {
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0px;
+            li {
+                word-wrap: break-word;
+                color: $light-grey;
+                font-family: $fontNormal;
+                font-size: 17px;
+                line-height: 29px;
+                font-style: normal;
+                font-weight: 500;
+                letter-spacing: -0.8px;
+                text-transform: none;
+                a {
+                    color: $light-grey;
+                    text-decoration: none;
+                }
+                &:hover {
+                    a {
+                        color: #fff !important;
+                    }
+                }
+            }
+        }
+        span {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: $light-grey;
+            font-weight: 500;
+            letter-spacing: -0.8px;
+            line-height: 22px;
+        }
+    }
+}
+
+.widget_recent_entries>ul>li>a,
+.widget_pages>ul>li>a,
+.widget_meta>ul>li>a,
+.widget_nav_menu ul li a,
+.widget_recent_comments>ul>li>a,
+.widget_recent_entries>ul>li>span {
+    display: block;
+}
+
+//  copyright
+.copyright {
+    display: block;
+    background-color: #1b1b1b;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    vertical-align: middle;
+    color: #818181;
+    p {
+        margin: 0px;
+        a {
+            color: #818181;
+        }
+    }
+}

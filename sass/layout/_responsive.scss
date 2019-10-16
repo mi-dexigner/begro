@@ -1,0 +1,22 @@
+/* 
+@ mediaQuery(1500px,1200px) = min width and max width
+@ mediaQuery(1500px) = max width
+*/
+/* Normal desktop :1200px. */
+@include mediaQuery(1500px,1200px){}
+
+/* Normal desktop :992px. */
+@include mediaQuery(1200px,992px){}
+
+ 
+/* Tablet desktop :768px. */
+@include mediaQuery(768px,991px){}
+
+
+@include mediaQuery(767px){}
+ 
+/* Large Mobile :480px. */
+@include mediaQuery(480px,767px){}
+
+/* small mobile :320px. */
+@include mediaQuery(320px){}

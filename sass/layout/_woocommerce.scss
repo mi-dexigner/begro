@@ -1,0 +1,44 @@
+.woocommerce-page{
+        article{
+           padding-top: 0px; 
+           a{
+            color: $primaryColor;
+           }
+   }
+}
+
+.woocommerce-MyAccount-navigation{
+    ul{
+    list-style:none;
+    background: $primaryColor;
+    padding: 2rem 0px;
+    border-radius: .25em;
+    }
+    li{
+    padding: .5rem 2em;
+    a{
+        color: #fff;
+    }
+    &:hover{
+        background:#fff;
+        a{
+         color:  $primaryColor;   
+        }
+    }
+    }
+}
+
+
+.woocommerce-checkout{
+    .col2-set{
+  .col-1,.col-2{
+    float: none;
+    width:100%;
+-webkit-box-flex: 0;
+-ms-flex: 0 0 auto;
+flex: 0 0 auto;
+width: auto;
+max-width: none;
+  } 
+  } 
+}

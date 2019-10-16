@@ -1,0 +1,652 @@
+/* WP WYSIWYG Editor Styles */
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin : 5px auto 5px auto;
+}
+
+.alignright {
+    float : right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float : left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float : right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float : left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display     : block;
+    margin-left : auto;
+    margin-right: auto;
+}
+
+img.aligncenter {
+    @include fullwidth();
+}
+
+.wp-caption {
+    background: #fff;
+    border    : 1px solid #f0f0f0;
+    max-width : 96%;
+    /* Image does not overflow the content area */
+    padding   : 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border   : 0 none;
+    height   : auto;
+    margin   : 0;
+    max-width: 98.5%;
+    padding  : 0;
+    width    : auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size  : 11px;
+    line-height: 17px;
+    margin     : 0;
+    padding    : 0 4px 5px;
+}
+
+.bypostauthor,
+.gallery-caption {
+    font-weight: 400;
+}
+
+body:lang(ar),
+button:lang(ar),
+input:lang(ar),
+select:lang(ar),
+optgroup:lang(ar),
+textarea:lang(ar),
+.author-description .author-link:lang(ar),
+.comment-metadata:lang(ar),
+.comment-reply-link:lang(ar),
+.comments-title:lang(ar),
+.comment-author .fn:lang(ar),
+.discussion-meta-info:lang(ar),
+.entry-meta:lang(ar),
+.entry-footer:lang(ar),
+.main-navigation:lang(ar),
+.no-comments:lang(ar),
+.not-found .page-title:lang(ar),
+.error-404 .page-title:lang(ar),
+.post-navigation .post-title:lang(ar),
+.page-links:lang(ar),
+.page-description:lang(ar),
+.pagination .nav-links:lang(ar),
+.sticky-post:lang(ar),
+.site-title:lang(ar),
+.site-info:lang(ar),
+#cancel-comment-reply-link:lang(ar),
+h1:lang(ar),
+h2:lang(ar),
+h3:lang(ar),
+h4:lang(ar),
+h5:lang(ar),
+h6:lang(ar),
+.page-title:lang(ar),
+blockquote cite:lang(ar),
+table:lang(ar),
+.button:lang(ar),
+input:lang(ar)[type="button"],
+input:lang(ar)[type="reset"],
+input:lang(ar)[type="submit"],
+.comment-navigation .nav-previous:lang(ar),
+.comment-navigation .nav-next:lang(ar),
+.comment-list .pingback .comment-body:lang(ar),
+.comment-list .trackback .comment-body:lang(ar),
+.comment-list .pingback .comment-body .comment-edit-link:lang(ar),
+.comment-list .trackback .comment-body .comment-edit-link:lang(ar),
+.comment-form .comment-notes:lang(ar),
+.comment-form label:lang(ar),
+.widget_archive ul li:lang(ar),
+.widget_categories ul li:lang(ar),
+.widget_meta ul li:lang(ar),
+.widget_nav_menu ul li:lang(ar),
+.widget_pages ul li:lang(ar),
+.widget_recent_comments ul li:lang(ar),
+.widget_recent_entries ul li:lang(ar),
+.widget_rss ul li:lang(ar),
+.widget_tag_cloud .tagcloud:lang(ar),
+.entry .entry-content .wp-block-button .wp-block-button__link:lang(ar),
+.entry .entry-content .wp-block-archives li:lang(ar),
+.entry .entry-content .wp-block-categories li:lang(ar),
+.entry .entry-content .wp-block-latest-posts li:lang(ar),
+.entry .entry-content .wp-block-verse:lang(ar),
+.entry .entry-content .has-drop-cap:lang(ar):not(:focus):first-letter,
+.entry .entry-content .wp-block-pullquote cite:lang(ar),
+.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text:lang(ar),
+.entry .entry-content .wp-block-cover-image .wp-block-cover-text:lang(ar),
+.entry .entry-content .wp-block-cover-image h2:lang(ar),
+.entry .entry-content .wp-block-cover .wp-block-cover-image-text:lang(ar),
+.entry .entry-content .wp-block-cover .wp-block-cover-text:lang(ar),
+.entry .entry-content .wp-block-cover h2:lang(ar),
+.entry .entry-content .wp-block-audio figcaption:lang(ar),
+.entry .entry-content .wp-block-video figcaption:lang(ar),
+.entry .entry-content .wp-block-image figcaption:lang(ar),
+.entry .entry-content .wp-block-gallery .blocks-gallery-image figcaption:lang(ar),
+.entry .entry-content .wp-block-gallery .blocks-gallery-item figcaption:lang(ar),
+.entry .entry-content .wp-block-file:lang(ar),
+.entry .entry-content .wp-block-file .wp-block-file__button:lang(ar),
+.entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta:lang(ar),
+.wp-caption-text:lang(ar),
+.gallery-caption:lang(ar) {
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+body:lang(ary),
+button:lang(ary),
+input:lang(ary),
+select:lang(ary),
+optgroup:lang(ary),
+textarea:lang(ary),
+.author-description .author-link:lang(ary),
+.comment-metadata:lang(ary),
+.comment-reply-link:lang(ary),
+.comments-title:lang(ary),
+.comment-author .fn:lang(ary),
+.discussion-meta-info:lang(ary),
+.entry-meta:lang(ary),
+.entry-footer:lang(ary),
+.main-navigation:lang(ary),
+.no-comments:lang(ary),
+.not-found .page-title:lang(ary),
+.error-404 .page-title:lang(ary),
+.post-navigation .post-title:lang(ary),
+.page-links:lang(ary),
+.page-description:lang(ary),
+.pagination .nav-links:lang(ary),
+.sticky-post:lang(ary),
+.site-title:lang(ary),
+.site-info:lang(ary),
+#cancel-comment-reply-link:lang(ary),
+h1:lang(ary),
+h2:lang(ary),
+h3:lang(ary),
+h4:lang(ary),
+h5:lang(ary),
+h6:lang(ary),
+.page-title:lang(ary),
+blockquote cite:lang(ary),
+table:lang(ary),
+.button:lang(ary),
+input:lang(ary)[type="button"],
+input:lang(ary)[type="reset"],
+input:lang(ary)[type="submit"],
+.comment-navigation .nav-previous:lang(ary),
+.comment-navigation .nav-next:lang(ary),
+.comment-list .pingback .comment-body:lang(ary),
+.comment-list .trackback .comment-body:lang(ary),
+.comment-list .pingback .comment-body .comment-edit-link:lang(ary),
+.comment-list .trackback .comment-body .comment-edit-link:lang(ary),
+.comment-form .comment-notes:lang(ary),
+.comment-form label:lang(ary),
+.widget_archive ul li:lang(ary),
+.widget_categories ul li:lang(ary),
+.widget_meta ul li:lang(ary),
+.widget_nav_menu ul li:lang(ary),
+.widget_pages ul li:lang(ary),
+.widget_recent_comments ul li:lang(ary),
+.widget_recent_entries ul li:lang(ary),
+.widget_rss ul li:lang(ary),
+.widget_tag_cloud .tagcloud:lang(ary),
+.entry .entry-content .wp-block-button .wp-block-button__link:lang(ary),
+.entry .entry-content .wp-block-archives li:lang(ary),
+.entry .entry-content .wp-block-categories li:lang(ary),
+.entry .entry-content .wp-block-latest-posts li:lang(ary),
+.entry .entry-content .wp-block-verse:lang(ary),
+.entry .entry-content .has-drop-cap:lang(ary):not(:focus):first-letter,
+.entry .entry-content .wp-block-pullquote cite:lang(ary),
+.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text:lang(ary),
+.entry .entry-content .wp-block-cover-image .wp-block-cover-text:lang(ary),
+.entry .entry-content .wp-block-cover-image h2:lang(ary),
+.entry .entry-content .wp-block-cover .wp-block-cover-image-text:lang(ary),
+.entry .entry-content .wp-block-cover .wp-block-cover-text:lang(ary),
+.entry .entry-content .wp-block-cover h2:lang(ary),
+.entry .entry-content .wp-block-audio figcaption:lang(ary),
+.entry .entry-content .wp-block-video figcaption:lang(ary),
+.entry .entry-content .wp-block-image figcaption:lang(ary),
+.entry .entry-content .wp-block-gallery .blocks-gallery-image figcaption:lang(ary),
+.entry .entry-content .wp-block-gallery .blocks-gallery-item figcaption:lang(ary),
+.entry .entry-content .wp-block-file:lang(ary),
+.entry .entry-content .wp-block-file .wp-block-file__button:lang(ary),
+.entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta:lang(ary),
+.wp-caption-text:lang(ary),
+.gallery-caption:lang(ary) {
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+/* Text meant only for screen readers. */
+
+.screen-reader-text {
+    border           : 0;
+    clip             : rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path        : inset(50%);
+    height           : 1px;
+    margin           : -1px;
+    overflow         : hidden;
+    padding          : 0;
+    position         : absolute;
+    width            : 1px;
+    word-wrap        : normal !important;
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius   : 3px;
+    box-shadow      : 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip            : auto !important;
+    color           : #21759b;
+    display         : block;
+    font-size       : 14px;
+    font-size       : 0.875rem;
+    font-weight     : bold;
+    height          : auto;
+    left            : 5px;
+    line-height     : normal;
+    padding         : 15px 23px 14px;
+    text-decoration : none;
+    top             : 5px;
+    width           : auto;
+    z-index         : 100000;
+    /* Above WP toolbar. */
+}
+
+.search-form {
+    margin-bottom: 34px;
+    position     : relative;
+
+    input[type="search"] {
+        width             : 100%;
+        max-width         : 220px;
+        overflow          : hidden;
+        background-color  : #fbfbfc;
+        padding           : 0 18px;
+        height            : 51px;
+        outline           : 0;
+        color             : #969696;
+        border            : 2px solid #f2f2f2;
+        border-right      : 0;
+        float             : left;
+        font-weight       : 600;
+        font-family       : Poppins, sans-serif;
+        font-size         : 14px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing   : border-box;
+        box-sizing        : border-box;
+        box-shadow        : none;
+    }
+
+    .search-submit {
+        right           : 0;
+        border          : none;
+        outline         : 0;
+        font-family     : Simple-Line-Icons;
+        width           : 51px;
+        height          : 51px;
+        cursor          : pointer;
+        color           : #fff;
+        background-color: $primaryColor;
+        font-size       : 18px;
+        bottom          : 15px;
+        position        : absolute;
+
+        i {
+            font-size: 16px;
+        }
+    }
+}
+
+.sidebar {
+    .widget {
+        margin: 0 0 #{$size__spacing-unit};
+
+        ul {
+            margin    : 0;
+            list-style: none;
+            padding   : 0px;
+
+            li {
+                border-bottom: 1px solid #f2f2f2;
+                position     : relative;
+                padding      : 8px 15px;
+
+                a {
+                    font-size     : 14px;
+                    font-weight   : 600;
+                    font-family   : $fontNormal;
+                    color         : #545454;
+                    line-height   : normal;
+                    display       : inline-block;
+                }
+            }
+        }
+
+        .recentcomments {
+            span {
+                a {
+                    padding-left: 12px !important;
+                }
+            }
+
+            a {
+                padding-left: 0px !important;
+            }
+        }
+
+        .widget-title {
+            margin-bottom     : 10px;
+            margin-top        : 0;
+            line-height       : 32px;
+            font-weight       : 600;
+            padding           : 8px 15px;
+            font-style        : normal;
+            color             : #333333;
+            font-size         : 20px;
+            opacity           : 1;
+            visibility        : visible;
+            -webkit-transition: opacity 0.24s ease-in-out;
+            -moz-transition   : opacity 0.24s ease-in-out;
+            transition        : opacity 0.24s ease-in-out;
+
+            &:after {
+                content         : "";
+                margin-top      : 10px;
+                margin-bottom   : 0px;
+                border          : 0;
+                border-top-color: currentcolor;
+                border-top-style: none;
+                border-top-width: 0px;
+                border-top      : 1px solid #eee;
+                display         : block;
+            }
+        }
+
+        /* Make sure select elements fit in widgets. */
+        select {
+            max-width: 100%;
+        }
+
+        a {
+            color  : $primaryColorBtn;
+            display: block;
+
+            &:hover {
+                color: $primaryColorBtnHover;
+            }
+        }
+    }
+}
+.widget-social-icon{
+    display: inline-block;
+    span{
+        display: inline-block;
+        border-style: solid;
+        @include transition-property(all);
+    @include transition-duration(.2ms);
+    @include transition-timing-function(ease);
+    }
+    a{
+        display: block;
+    }
+   
+  }
+.widget-contact-info{
+    display: inline-block;
+    span{
+        line-height: 26px
+    }
+    a{
+        display: inline-block;
+    }
+   
+  }
+.widget-contact-info{
+    ul{
+        margin:0px;
+        li{
+            a{
+                color:#fff;
+                font-size:1em;
+                line-height: 26px
+            }
+        }
+    }
+}
+.widget-business-hours {
+    margin-bottom: 34px;
+    clear        : both;
+
+    ul {
+        list-style-type: none;
+        padding        : 0;
+        margin         : 0;
+
+        li {
+            border-top     : 1px solid #d9d9d9;
+            list-style-type: none;
+            overflow       : hidden;
+
+            &:first-child {
+                border-top: none;
+            }
+
+            span {
+                font-size  : 12px;
+                line-height: 22px;
+            }
+        }
+    }
+}
+
+.widget_recent_entries {
+    margin-bottom: 34px;
+    clear        : both;
+}
+
+.widget-post-list-item {
+    margin-bottom: 15px;
+    min-height   : 74px;
+}
+
+.widget-post-list-item .thumbnail {
+    background   : rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border       : medium none;
+    display      : block;
+    margin-bottom: 8px;
+    max-width    : 100%;
+}
+
+.widget-post-list-item .thumbnail a {
+    float   : left;
+    width   : 70px;
+    height  : auto;
+    position: relative;
+}
+
+.widget-post-list-item .thumbnail img {
+    padding-top: 3px;
+}
+
+.widget-post-list-item.show-image .title-post,
+.widget-post-list-item.show-image .meta-data {
+    margin-left: 86px;
+    color      : #6b6b6b;
+}
+
+.widget-latest-posts .widget-post-list-item .title-post {
+    font-size    : 16px;
+    color        : #6b6b6b;
+    line-height  : 22px;
+    margin-bottom: 6px;
+}
+
+.widget-post-list-item .meta-data {
+    text-transform: uppercase;
+    font-size     : 11px;
+    margin-bottom : 9px;
+}
+
+.widget-post-list-item .meta-data span {
+    margin-right: 6px;
+}
+
+.widget-social {
+    margin-bottom: 34px;
+    clear        : both;
+}
+
+.widget-social .widgetsocial a {
+    font-size         : 14px !important;
+    display           : inline-block;
+    font-family       : Poppins, sans-serif;
+    text-transform    : capitalize;
+    font-weight       : 600;
+    color             : #f6f6f6;
+    padding           : 7px 13px;
+    margin-right      : 3px;
+    margin-bottom     : 5px;
+    background-color  : #012b55;
+    -webkit-transition: background-color 0.15s ease-out, border 0.15s ease-out;
+    -moz-transition   : background-color 0.15s ease-out, border 0.15s ease-out;
+    transition        : background-color 0.15s ease-out, border 0.15s ease-out;
+    line-height       : 26px;
+}
+
+.widget-social .widgetsocial a.twitter-bg {
+    background-color: #00aced;
+}
+
+.widget-social .widgetsocial a.facebook-bg {
+    background-color: #3b5998;
+}
+
+.widget-social .widgetsocial a.google-bg {
+    background-color: #dd4b39;
+}
+
+.widget-social .widgetsocial a.vimeo-bg {
+    background-color: #aad450;
+}
+
+.widget-social .widgetsocial a.linkedin-bg {
+    background-color: #007bb5;
+}
+
+.widget-social .widgetsocial a.dribbble-bg {
+    background-color: #ff0084;
+}
+
+.widget-social .widgetsocial a.instagram-bg {
+    background-color: #125688;
+}
+
+.widget-social .widgetsocial a.youtube-bg {
+    background-color: #bb0000;
+}
+
+.widget-text {
+    margin-bottom: 34px;
+    clear        : both;
+}
+
+.textwidget {
+    font-family           : "robotolight", sans-serif;
+    font-size             : 15px;
+    line-height           : 26px;
+    color                 : grey;
+    font-weight           : 400;
+    overflow-x            : hidden !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+.widget_calendar .calendar_wrap {
+    text-align: center;
+
+    table td,
+    table th {
+        border: none;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+// Tags Cloud Widget
+.tagcloud {
+    text-align: center;
+
+    a {
+        display         : inline-block;
+        background-color: #7d7d7d;
+        padding         : 1px 9px;
+        border-radius   : 10px;
+        color           : #eee;
+    }
+}
+
+.widget_tag_cloud {
+    margin-bottom: 34px;
+    clear        : both;
+
+    .tagcloud {
+        a {
+            font-size         : 12px !important;
+            display           : inline-block;
+            font-family       : Poppins, sans-serif;
+            text-transform    : capitalize;
+            font-weight       : 600;
+            color             : #f6f6f6;
+            padding           : 0 18px;
+            margin-right      : 3px;
+            margin-bottom     : 5px;
+            border            : 1px solid #012b55;
+            background-color  : #012b55;
+            -webkit-transition: background-color 0.15s ease-out, border 0.15s ease-out;
+            -moz-transition   : background-color 0.15s ease-out, border 0.15s ease-out;
+            transition        : background-color 0.15s ease-out, border 0.15s ease-out;
+            line-height       : 26px;
+
+            &:hover {
+                background-color: #323232;
+                border          : 1px solid #323232;
+            }
+        }
+    }
+}

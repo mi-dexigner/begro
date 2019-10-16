@@ -1,0 +1,135 @@
+/* header sticky */
+
+.header-sticky.sticky {
+    @include sticky;
+}
+
+
+/*  Page Banner */
+
+.page-header {
+
+    // @include banner;
+    .jumbotron {
+        background-color: transparent;
+
+        h1 {
+            a {
+                color: #fff;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        small {
+            a {
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+/* button  */
+
+.btn {
+    @include button;
+}
+
+
+/*  Scroll up */
+
+#scrollUp {
+    background   : $primaryColor;
+    height       : 35px;
+    width        : 35px;
+    right        : 50px;
+    bottom       : 77px;
+    color        : #fff;
+    font-size    : 20px;
+    text-align   : center;
+    border-radius: 50%;
+    font-size    : 20px;
+    line-height  : 34px;
+    opacity      : .8;
+}
+
+#scrollUp:hover {
+    background     : #444;
+    text-decoration: none;
+    opacity        : 1;
+    background     : #444;
+    text-decoration: none;
+}
+
+
+/*  loader  */
+
+#mi-loader {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    background-color: $primaryColor;
+    z-index         : 9999;
+    height          : 100%;
+    width           : 100%;
+
+    .loader {
+        @include loader;
+    }
+}
+
+
+/* 
+	Ajax Loading
+	------------------------------------------------
+*/
+
+.mi-posts-container {
+    article {
+        @include animate(all, 320ms);
+        @include transform(translateY(100px));
+        opacity: 0;
+
+        &.reveal {
+            @include transform(translateY(0px));
+            opacity: 1;
+        }
+    }
+}
+
+.btn-mi-load {
+    color    : #222 !important;
+    font-size: 30px;
+    margin   : 0 auto;
+    cursor   : pointer;
+    opacity  : .7;
+    @include animate(opacity, 320ms);
+
+    &:hover,
+    &:focus,
+    &.loading {
+        opacity: 1;
+    }
+
+    &.loading {
+        cursor: default;
+    }
+
+    span {
+        &.mi-loading {
+            margin-bottom: 5px;
+        }
+
+        display: block;
+    }
+}
+
+.spin {
+    animation-name           : spin;
+    animation-duration       : 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}

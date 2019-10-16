@@ -1,0 +1,236 @@
+body {
+    font-family: $fontNormal;
+    font-size: $base-font-size;
+    font-weight: 400;
+    line-height: normal;
+}
+
+a {
+    @include transition-property(all);
+    @include transition-duration(.2ms);
+    @include transition-timing-function(ease);
+    text-decoration: none;
+    @include link-colors($primaryColorBtn,
+    $primaryColorBtnHover,
+    $primaryColorBtnHover,
+    $primaryColorBtn,
+    $primaryColorBtn);
+    //@include unstyled-link();
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+h1 {
+    font-family: $fontNormal;
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h2 {
+    font-family: $fontNormal;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h3 {
+    font-family: $fontNormal;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h4 {
+    font-family: $fontNormal;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h5 {
+    font-family: $fontNormal;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h6 {
+    font-family: $fontNormal;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+p {
+    font-family: $fontNormal;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-image {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include mediaQuery(767px) {
+        background-position: center;
+    }
+}
+
+.dtable {
+    display: table;
+    width: 100%;
+    height: 100%;
+    .dtable-cell {
+        display: table-cell;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.img {
+    max-width: 100%;
+    @include transition-property(all);
+    @include transition-duration(.3s);
+    @include transition-timing-function(linear);
+}
+
+.img-left {
+    width: 100%;
+    max-width: 500px;
+}
+
+.img-right {
+    width: 100%;
+    max-width: 500px;
+}
+
+.f-left {
+    float: left !important;
+}
+
+.f-right {
+    float: right !important;
+}
+
+.fix {
+    overflow: hidden !important;
+}
+
+.height-100 {
+    height: 100vh;
+}
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.wpcf7-submit {
+    -moz-user-select: none;
+    background: #012b55 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 0px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 0;
+    padding: 13px 25px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transition: all 0.3s ease 0s;
+    vertical-align: middle;
+    white-space: nowrap;
+    box-shadow: none;
+    color: #fff;
+    padding: 12px 18px 12px 18px;
+    min-height: 38px;
+    line-height: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+    border-top: 3px solid #012b55;
+}
+
+.woocommerce-message::before {
+    color: #012b55;
+}
+
+.mi-shareThis {
+    ul {
+        li {
+            a {
+                color: #012b55;
+                display: block !important;
+            }
+        }
+    }
+}
+
+.testimonials-slider {
+    overflow: hidden;
+    position: relative;
+    .kc-testi-layout-2 {
+        float: none
+    }
+    .swiper-arrows {}
+    .swiper-button-prev {
+        left: 0px;
+        z-index: 9;
+        float: none;
+        width: 56px;
+    }
+    .swiper-button-next {
+        z-index: 9;
+        float: none;
+        width: 56px;
+    }
+}
+
+.iframemap {
+    width: 100%;
+    margin-top: 20px;
+    @include transition-property(all);
+    @include transition-duration(.2s);
+    @include transition-timing-function(linear);
+    iframe {
+        width: 100%;
+        height: 350px;
+        -webkit-filter: grayscale(100%);
+        /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
+    &:hover {
+        iframe {
+            filter: grayscale(0%);
+            -webkit-filter: grayscale(0%);
+            /* Safari 6.0 - 9.0 */
+        }
+    }
+}

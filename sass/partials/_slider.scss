@@ -1,0 +1,11 @@
+.marquee {
+	height: 500px;
+	.marquee_panel {
+		.panel_caption {
+			* {
+    color: #000000;
+    line-height: initial;
+}
+		}
+	}
+}
