@@ -1,8 +1,8 @@
 <?php
 /*
-	
+
 @package mitheme
-	
+
 	========================
 		THEME SUPPORT OPTIONS
 	========================
@@ -47,11 +47,6 @@ add_theme_support( 'title-tag' );
   add_editor_style( 'style-editor.css' );
   load_theme_textdomain( "begro", get_template_directory() . '/languages' );
 
-function remove_recent_comments_style() {
-    global $wp_widget_factory;
-    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
-}
-add_action('widgets_init', 'remove_recent_comments_style');
 /* Activate Nav Menu Option */
 
 function mi_register_nav_menu(){
@@ -150,7 +145,7 @@ function mi_get_embedded_media($type = array())
     $content = do_shortcode(apply_filters('the_content', get_the_content()));
     $embed = get_media_embedded_in_content($content, $type);
     if (in_array('audio', $type)):
-        $output = str_replace('?visual=true', '?visual=false', $embed[0]); 
+        $output = str_replace('?visual=true', '?visual=false', $embed[0]);
     else:
         echo $output = (($embed[0])?$embed[0]:'');
     endif;
@@ -330,7 +325,7 @@ if(!function_exists('mi_paging_nav')){
         'pagelink'         => '%',
         'echo'             => 1
     );
- 
+
         wp_link_pages( $defaults );
         ?>
    <!-- <ul class="list-inline">
@@ -339,13 +334,13 @@ if(!function_exists('mi_paging_nav')){
        <?php previous_posts_link(__('Newer Posts &rarr;',"begro")); ?>
    </li>
    <?php endif; ?>
-   
+
        <?php if (get_next_posts_link()):?>
    <li class="previous list-inline-item">
        <?php next_posts_link(__(' &larr; older Posts',"begro")); ?>
    </li>
    <?php endif; ?>
-   
+
    </ul>  -->
     <?php
     }
@@ -357,4 +352,12 @@ if (!function_exists('mi_validate_length')) {
         // First, remove trailing and leading whitespace
         return(strlen( trim( $fieldValue ) ) > $minLength);
     }
+}
+// Replaces the excerpt "Read More" text by a link
+if (!function_exists('mi_excerpt_more')) {
+function mi_excerpt_more($more) {
+    global $post;
+ return '<a class="btn-link mi-link" href="'. get_permalink($post->ID) . '"> Read the full article...</a>';
+}
+add_filter('excerpt_more', 'mi_excerpt_more');
 }

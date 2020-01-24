@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
 * header.php
 *
@@ -19,12 +19,9 @@
 	<body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div class="wrapper">
-<?php mi_loader(); ?>
+<?php //mi_loader(); ?>
 <header class="header-wrapper">
-<?php if(!is_page_template('template-landing.php')): 
-	
-
-?>
+<?php if(!is_page_template('template-landing.php')):  ?>
 
 <!-- // being top bar -->
 <?php if(is_active_sidebar('topbar-left-column')):  ?>
@@ -40,54 +37,22 @@
 <!-- // end top bar -->
 	<!-- header -->
 <div class="header-sticky site-header" <?php echo (header_image() != '' ? 'data-imgurl="header_image()"' : ''); ?>>
-<nav class="navbar   navbar-light navbar navbar-expand-md">
+<nav class="navbar   navbar-light navbar navbar-expand-lg">
 		<div class="container header-contents">
-			
-        <div class="site-logo">
-        <?php get_template_part( 'template-parts/header/content', 'branding' ); ?>
-		
-		</div>
-					<!-- end of site-logo -->
-					<?php if(has_nav_menu('primary')):?>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-				</button>
-<?php endif; ?>
-<?php if(has_nav_menu('full-screen-menu')):?>
-				 <div class="toggle-btn">
-          <span class="one"></span>
-					<span class="two"></span>
-					<span class="three"></span>
-		 </div>
-		 <?php endif; ?>
-        <div class="site-navigation ml-md-auto" role="navigation">
-				<?php if(has_nav_menu('primary')):?>
-				<?php mi_main_menu(); ?>
-				<?php endif; ?>
-			
-	</div>
+			<?php get_template_part( 'template-parts/header/header', 'default' ); ?>
+
 		</div>
 	<!-- end of container -->
-	
+
 	</nav><!-- end of nav -->
-	
+
 </div>
 	</header>
 	<!-- end site-header -->
 	<?php if(has_nav_menu('full-screen-menu')):?>
 	<div class="full-screen-menu ">
 	<div class="data">
-               <ul>
-                    <li>Navigation</li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Story</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-               </ul>
+               <?php full_screen_menu(); ?>
           </div>
 	</div>
 	<?php endif; ?>
-
-
-	
-

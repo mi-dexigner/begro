@@ -13,23 +13,40 @@
 
     .column-left {
         &.col {
+            text-align: left;
             @include mediaQuery(767px) {
-                -ms-flex : 0 0 auto;
-                flex     : 0 0 auto;
-                width    : 100%;
-                max-width: 100%;
+                -ms-flex  : 0 0 auto;
+                flex      : 0 0 auto;
+                width     : 100%;
+                max-width : 100%;
+                text-align: center;
+               
             }
         }
     }
-
+.column-middle{
+    &.col {
+        text-align: center;
+        @include mediaQuery(767px) {
+            -ms-flex  : 0 0 auto;
+            flex      : 0 0 auto;
+            width     : 100%;
+            max-width : 100%;
+            text-align: center;
+           
+        }
+    } 
+}
     .column-right {
         ul {
             display        : flex;
-            justify-content: end;
+            justify-content: flex-end;
             align-content  : center;
             align-items    : center;
             margin         : 0px;
-
+            @include mediaQuery(767px) {
+                justify-content: center;
+            }
             li {
                 padding:0 10px;
                 a {
@@ -41,11 +58,13 @@
         }
 
         &.col {
+            text-align:right;
             @include mediaQuery(767px) {
-                -ms-flex : 0 0 auto;
-                flex     : 0 0 auto;
-                width    : 100%;
-                max-width: 100%;
+                -ms-flex  : 0 0 auto;
+                flex      : 0 0 auto;
+                width     : 100%;
+                max-width : 100%;
+                text-align: center;
             }
         }
     }

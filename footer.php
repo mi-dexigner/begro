@@ -11,6 +11,7 @@
 **/
  ?>
 
+
 <?php if(is_active_sidebar('footer-one')):  ?>
 <!-- footer -->
 <footer class="siter-footer">
@@ -23,7 +24,7 @@
 </footer>
 <!-- end site-footer -->
 <?php endif; ?>
-
+<?php get_sidebar('footernav'); ?>
 	<div class="copyright">
 			<div class="container">
 				<div class="row">
@@ -32,13 +33,8 @@
 					<?php else: ?>
 					<div class="col">
 						<p>
-						<?php if(get_option( 'copyright_text' ) !=''){ ?>
-
-				<?php } else { ?>&copy; <?php echo esc_html(date('Y')); ?>
-				<a href="<?php echo esc_url(home_url()); ?>"><?php ucfirst(bloginfo('name')); ?></a>
-				<?php esc_html_e('. All right reserved',"begro"); ?>
-			<?php } ?>
-			<?php esc_html_e('Designed &amp; Developed BY ',"begro"); ?> <a href="<?php echo esc_url('https://www.midexigner.com'); ?>" title="MI Dexigner" target="_blank" rel="nofollow">MI Dexigner</a>
+						
+			<?php esc_html_e('Designed &amp; Developed BY ',"begro"); ?> <strong><a href="<?php echo esc_url('https://www.midexigner.com'); ?>" title="MI Dexigner" target="_blank" rel="nofollow">MI Dexigner</a></strong> | Power By <strong>Wordpress</strong>
 			</p>
 					</div>
 				<?php endif; ?>

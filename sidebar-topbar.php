@@ -11,7 +11,7 @@
 */
  ?>
  <?php if(is_active_sidebar('topbar-left-column')):  ?>
- 	<div class="column-left col text-md-left text-center">
+ 	<div class="column-left col">
  	<?php dynamic_sidebar('topbar-left-column'); ?>
  	</div>
  	<?php endif; ?>
@@ -21,7 +21,7 @@
  	</div>
 <?php endif; ?>
 <?php if(is_active_sidebar('topbar-right-column')):  ?>
- 		<div class="column-right col text-md-right text-center">
+ 		<div class="column-right col">
  	<?php dynamic_sidebar('topbar-right-column'); ?>
  	</div>
  	<?php endif; ?>

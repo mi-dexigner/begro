@@ -1,45 +1,71 @@
 .header-wrapper {
     &.fixed {
-        position: fixed;
-        width: 100% !important;
-        z-index: 999;
-        margin: 0em auto;
-        background: #000;
+        position       : fixed;
+        width          : 100% !important;
+        z-index        : 999;
+        margin         : 0em auto;
+        background     : #000;
         justify-content: center;
     }
+
     .site-header {
         padding: 1.25em 0em;
+
         .navbar-light {
             padding: 0em;
+
             .site-logo {
                 @include mediaQuery(576px) {
                     margin-left: 1.25em;
                 }
+
+            }
+
+            .site-navigation {
+                @include mediaQuery(576px) {
+                    margin-left: 1.25em !important;
+
+                }
+
                 .navbar-brand {
                     min-height: inherit;
+
                     img {
                         min-height: inherit;
                     }
                 }
             }
+
             .navbar-nav {
+
+                /*  .dropdown:hover>.dropdown-menu {
+                    display: block;
+                } */
+
                 .nav-item {
                     padding: 0;
-                    margin: 0;
+                    margin : 0;
+
                     .nav-link {
-                        font-size: 14px;
-                        font-style: normal;
-                        font-weight: 500;
-                        letter-spacing: 1px;
+                        font-size     : 14px;
+                        font-style    : normal;
+                        font-weight   : 500;
+                        letter-spacing: 2;
                         text-transform: uppercase;
-                        position: relative;
-                        padding: 0 22px;
+                        position      : relative;
+                        padding       : .8rem 22px;
+
+                        @include mediaQuery(768px) {
+                            padding: 0px;
+                        }
                     }
                 }
             }
         }
+
         &.sticky {
             padding: 0em;
+
             .navbar-light {
                 .site-logo {
                     img {
@@ -49,55 +75,128 @@
             }
         }
     }
+
     .header-contents {
         position: relative;
     }
-    @include mediaQuery(767px) {
-        .header-contents {
-            position: relative;
-            .navbar-toggler {
-                position: absolute;
-                top: 0em;
-                right: 0.9375em;
+
+    @include mediaQuery(991px) {
+        .navbar-light {
+            .header-contents {
+                .navbar-toggler {
+                    position     : absolute;
+                    top          : 0em;
+                    right        : 0.9375em;
+                    background   : $primaryColor;
+                    padding      : .55rem;
+                    color        : transparent;
+                    border-color : transparent;
+                    border-radius: 50px;
+
+                    &.is-active {
+                        .navbar-toggler-icon {
+                            i {
+                                height            : 2px;
+                                width             : 30px;
+                                border-radius     : 6px;
+                                background        : #fff;
+                                display           : block;
+                                margin            : 0 auto;
+                                transform         : rotate(45deg);
+                                transition        : all .2s ease-in-out;
+                                -o-transition     : all .2s ease-in-out;
+                                -ms-transition    : all .2s ease-in-out;
+                                -moz-transition   : all .2s ease-in-out;
+                                -webkit-transition: all .2s ease-in-out;
+                                top               : 14px;
+                                position          : relative;
+
+                                +i {
+                                    width    : 30px;
+                                    top      : 12;
+                                    position : relative;
+                                    transform: rotate(-45deg);
+                                }
+
+                                &:last-child {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .navbar-toggler-icon {
+                        background: none;
+
+                        i {
+                            height            : 2px;
+                            width             : 20px;
+                            border-radius     : 0px;
+                            background        : #fff;
+                            display           : block;
+                            margin            : 3px 0;
+                            float             : right;
+                            transition        : all .2s ease-in-out;
+                            -o-transition     : all .2s ease-in-out;
+                            -ms-transition    : all .2s ease-in-out;
+                            -moz-transition   : all .2s ease-in-out;
+                            -webkit-transition: all .2s ease-in-out;
+
+                            +i {
+                                width: 25px;
+                            }
+
+                            &:last-child {
+                                width: 20px;
+                            }
+                        }
+                    }
+                }
             }
         }
+
         .site-navigation {
             margin-left: inherit !important;
-            width: 100%;
+            width      : 100%;
         }
     }
+
     .toggle-btn {
         position: absolute;
-        margin: 0;
-        padding: 0;
-        width: 2.5em;
-        height: 2.5em;
-        right: 0.9375em;
-        z-index: 1005;
-        top: 1.1375em;
-        cursor: pointer;
+        margin  : 0;
+        padding : 0;
+        width   : 2.5em;
+        height  : 2.5em;
+        right   : 0.9375em;
+        z-index : 1005;
+        top     : 1.1375em;
+        cursor  : pointer;
+
         @include mediaQuery(767px) {
             right: 0.9375em;
-            top: 0.5625em;
+            top  : 0.5625em;
         }
+
         span {
             &.one {
-                position: absolute;
-                width: 2.5em;
-                height: .125em;
+                position  : absolute;
+                width     : 2.5em;
+                height    : .125em;
                 background: #0099D3;
             }
+
             &.two {
-                position: absolute;
-                width: 2.5em;
-                height: .125em;
+                position  : absolute;
+                width     : 2.5em;
+                height    : .125em;
                 background: #0099D3;
                 margin-top: 0.75em;
             }
+
             &.three {
-                position: absolute;
-                width: 2.5em;
-                height: .125em;
+                position  : absolute;
+                width     : 2.5em;
+                height    : .125em;
                 background: #0099D3;
                 margin-top: 1.5em
             }
@@ -106,30 +205,36 @@
 }
 
 .full-screen-menu {
-    z-index: 1000;
-    position: fixed;
+    z-index   : 1000;
+    position  : fixed;
     background: rgba(42, 42, 42, .8);
-    height: 100%;
-    width: 100%;
-    top: -100%;
+    height    : 100%;
+    width     : 100%;
+    top       : -100%;
+
     .data {
-        padding: 8em 0 0 2em;
+        padding   : 8em 0 0 2em;
         text-align: left;
+
         ul {
             list-style: none;
+
             li {
                 line-height: normal;
+
                 &:first-child {
-                    color: grey;
+                    color    : grey;
                     font-size: 1.5em;
                 }
+
                 &:not(:first-child) {
-                    color: #fff;
+                    color    : #fff;
                     font-size: 2.625em;
                 }
+
                 a {
                     text-decoration: none;
-                    color: #fff;
+                    color          : #fff;
                 }
             }
         }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
 * category.php
 *
@@ -26,17 +26,10 @@
 
  		<header class="page-title">
 	<h1>
-	<?php 
-printf( 'Category Archives For &quot;%$s&quot;', "begro" single_cat_title( '', false ));
+	<?php
+  printf("Category Archives For &quot;%s&quot;.",single_cat_title( '', false ),'begro');
 	 ?>
 	</h1>
-<?php 	
-// Show an optional category description.
-if(category_description() ){
-	echo '<p>' . category_description() . '</p>';
-}
-
- ?>
  </header>
 
 <?php while( have_posts()) : the_post(); ?>
@@ -51,6 +44,6 @@ if(category_description() ){
  <?php get_sidebar(); ?>
 </div><!-- .row -->
 </div><!-- .container -->
-</main>	
+</main>
 </div><!-- #primary -->
  <?php get_footer(); ?>

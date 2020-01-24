@@ -234,3 +234,16 @@ p {
         }
     }
 }
+
+#crumbs {
+    background: none;
+    padding-left: 0px;
+    li{
+      &.active{
+            color:$primaryColor;
+      }
+      a{
+        color:$light-grey;
+      }
+    }
+}

@@ -12,9 +12,38 @@
 ?>
 <?php get_header(); ?>
 
-   
-       
-<?php mi_featured_blog();?>
+
+
+<?php mi_featured_blog();
+  $theParent = wp_get_post_parent_id(get_the_ID());
+$testArray = get_pages(
+  array(
+    'child_of' => get_the_ID()
+  )
+);
+if($theParent or $testArray){
+
+
+get_theme_file_uri('assets/img/logo.png');
+// the_title();
+// get_the_title();
+// the_ID();
+// get_the_ID();
+if($theParent){
+  $findChildrenOf = $theParent;
+}else{
+  $findChildrenOf = get_the_ID();
+}
+
+wp_list_pages($pageChild = array(
+  'title_li' => null,
+  //'child_of' =>$findChildrenOf
+) );
+}
+/* https://codex.wordpress.com
+https://developer.wordpress.com
+*/
+?>
 <!-- start content -->
 <div id="primary" class="content-area">
 
@@ -23,7 +52,7 @@
 <div class="row">
  <div class="main-content col-md-9 ">
   <div class="mi-posts-container">
-<?php  if (have_posts()) : 
+<?php  if (have_posts()) :
 echo '<div class="page-limit" >';
   while (have_posts()) :the_post();
     /*
@@ -40,9 +69,9 @@ echo '<div class="page-limit" >';
                <?php  get_template_part('template-parts/post/content','none'); ?>
                       <?php endif; ?>
 </div><!-- /.mi-posts-container -->
-  
+
 </div><!-- /.container -->
- 
+
 
 <!-- end of content -->
 <?php if ( is_singular() ): wp_enqueue_script( "comment-reply" ); ?>
@@ -58,7 +87,7 @@ echo '<div class="page-limit" >';
 
 </div><!-- .container -->
 
-</main>	
+</main>
 </div><!-- #primary -->
 
 
@@ -67,6 +96,3 @@ echo '<div class="page-limit" >';
 <?php get_footer(); ?>
 
 <!-- end of footer -->
-
-
-

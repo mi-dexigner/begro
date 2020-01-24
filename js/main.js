@@ -1,6 +1,9 @@
 (function($) {
     "use strict";
-    $('[href="#"]').attr("href", "javascript:;");
+    let mediaTablete = window.matchMedia("(max-width: 768px)");
+
+    $('[href="#"]:not(.dropdown-toggle)').attr("href", "javascript:;");
+    
     $(window).on('load', function() {
         $("#mi-loader").delay(1000).fadeOut("slow", function() {
             $("#mi-loader").remove();
@@ -14,6 +17,14 @@
         setTimeout(function(){
             window.location = goTo;
         },900);
+    });
+
+    /* navbar toggler */
+    $('.navbar-toggler').on('click',function(){
+        var that = $(this);
+        that.toggleClass('is-active');
+        
+        
     })
     // meanmenu
     /*$('#mobile-menu').meanmenu({
@@ -24,10 +35,10 @@
     // 
     $("body").niceScroll({
         styler: "fb",
-        cursorcolor: "#012b55", // change cursor color in hex
+        cursorcolor: "#4886ff", // change cursor color in hex
         cursorwidth: "8px", // cursor width in pixel (you can also write "5px")
-        cursorborderradius: "5px", // border radius in pixel for cursor 
-        background: '#404040', // change css for rail background
+        cursorborderradius: "0px", // border radius in pixel for cursor 
+        background: '#7f7f7f', // change css for rail background
         cursorborder: '', // css definition for cursor border : 1px solid #fff
         autohidemode: false, // how hide the scrollbar works, possible values: 
         smoothscroll: true, // scroll with ease movement
@@ -262,7 +273,7 @@
     // WOW active
     new WOW().init();
 
-    $('#wrapper').imagesLoaded()
+    $('.wrapper').imagesLoaded()
         .always(function(instance) {
             //console.log('all images loaded');
         })

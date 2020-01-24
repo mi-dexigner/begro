@@ -1,9 +1,9 @@
-<?php 
-
-if (!function_exists('mi_main_menu')) :
-    /**
-     * Main navigation menu
+<?php
+ /**
+     * Main Primary Navigation Menu
      */
+if (!function_exists('mi_main_menu')) :
+
     function mi_main_menu() {
         wp_nav_menu( array(
             'theme_location'    => 'primary',
@@ -18,55 +18,72 @@ if (!function_exists('mi_main_menu')) :
     }
 
 endif;
+/**
+     * Main navigation menu
+     */
+    if (!function_exists('full_screen_menu')) :
 
+      function full_screen_menu() {
+          wp_nav_menu( array(
+              'theme_location'    => 'full-screen-menu',
+              'depth'             => 1,
+              'container'         => 'div',
+              'container_class'   => 'e',
+              'container_id'      => '',
+              'menu_class'        => 'navbar-nav',
+          ) );
+      }
+
+  endif;
  /**
      * Main Featured Blog
      */
 if(!function_exists('mi_featured_blog')):
- function mi_featured_blog() { 
+ function mi_featured_blog() {
  $args_cat = array(
           'include' => '1'
         );
-        
+
         $categories = get_categories($args_cat);
         $count = 0;
         $bullets = '';
         foreach($categories as $category):
-          
+
           if(is_home()){
-            $args = array( 
+            $args = array(
             'type' => 'post',
             'posts_per_page' => 1,
             'category__in' => $category->term_id,
             //'category__not_in' => array( 10 ),
           );
           }else{
-            $args = array( 
+            $args = array(
             'type' => 'page',
             'posts_per_page' => 1,
             'category__in' => $category->term_id,
             //'category__not_in' => array( 10 ),
           );
           }
-          
-          $featuredBlog = new WP_Query( $args ); 
-          
+
+          $featuredBlog = new WP_Query( $args );
+
           if( $featuredBlog->have_posts() ):
-            
+
             while( $featuredBlog->have_posts() ): $featuredBlog->the_post();
               $urlImg ='';
             if( has_post_thumbnail() ):
               $urlImg = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
             else:
-                $urlImg = IMAGES.'bannerbg.jpg';
+                $urlImg = get_theme_file_uri('img/bannerbg.jpg');
             endif;  ?>
 <section class="page-header ">
-  <div class="jumbotron text-white " data-imgurl="<?php echo $urlImg; ?>" >
+  <div class="jumbotron text-white  border-0" data-imgurl="<?php echo $urlImg; ?>" >
   <div class="container">
     <div class="row">
         <div class="col-md-6 px-0">
-          <?php the_title( sprintf('<h1 class="display-4 font-italic"><a href="%s">', esc_url( get_permalink() ) ),'</a></h1>' ); ?>
+          <?php the_title( sprintf('<h1><a href="%s">', esc_url( get_permalink() ) ),'</a></h1>' ); ?>
           <small><?php the_category(' '); ?></small>
+          <?php ((is_single())?mi_breadcrumb():'');?>
           <?php if(!is_single() && is_home()): ?>
           <p class="lead my-3"><?php the_excerpt(); ?></p>
          <?php endif; ?>
@@ -76,16 +93,16 @@ if(!function_exists('mi_featured_blog')):
       </div>
 </section>
  <?php endwhile;
-            
+
           endif;
-          
+
           wp_reset_postdata();
-          
+
         endforeach;  }
  endif;
 
 
-/* 
+/*
 * Inner page banner
 */
 
@@ -96,19 +113,19 @@ if(!function_exists('inner_page_banner')){
     $image_id = get_term_meta ( $cat_id, 'category-image-id', true );
    if(class_exists( 'WooCommerce' ) ) :
     if(is_shop()):
-            $urlImg = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );  
+            $urlImg = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
             else:
-                $urlImg = IMAGES.'bannerbg.jpg';
-            endif; 
+              $urlImg = get_theme_file_uri('img/bannerbg.jpg');
+            endif;
   else:
   if( has_post_thumbnail() ):
               $urlImg = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
           elseif( $image_id != ''):
              $urlImg = wp_get_attachment_url( $image_id );
             else:
-                $urlImg = IMAGES.'bannerbg.jpg';
+              $urlImg = get_theme_file_uri('img/bannerbg.jpg');
             endif;
-  endif; 
+  endif;
    ?>
 <section class="page-header ">
   <div class="jumbotron text-white background-image" data-imgurl="<?php echo $urlImg; ?>" >
@@ -116,6 +133,7 @@ if(!function_exists('inner_page_banner')){
     <div class="row">
         <div class="col-md-6 px-0">
           <?php the_title( sprintf('<h1 class="display-4 font-italic"><a href="%s">', esc_url( get_permalink() ) ),'</a></h1>' ); ?>
+<?php mi_breadcrumb () ;?>
         </div>
         </div>
   </div>
@@ -125,7 +143,7 @@ if(!function_exists('inner_page_banner')){
 }
 
 /*
-* Loader 
+* Loader
  */
 
 if(!function_exists('mi_loader')){
@@ -133,7 +151,7 @@ function mi_loader(){ ?>
 <div id ="mi-loader">
   <div class ="loader6"></div>
 </div>
-<?php 
+<?php
 }
 }
 /**
@@ -142,7 +160,7 @@ function mi_loader(){ ?>
 if(!function_exists('mi_starter_reminder')){
 function mi_starter_reminder(){
  $theme_page_url = 'https://www.midexigner.com/devs/begro';
-$themename = wp_get_theme(); 
+$themename = wp_get_theme();
  $message = sprintf(__( 'Welcome to %s! Before diving in to your new theme, please visit the <a style="color: #fff; font-weight: bold;" href="%s" target="_blank">theme\'s</a> page for access to dozens of tips and in-depth tutorials.', "begro" ),$themename,
                     esc_url( $theme_page_url )
                 );
@@ -154,7 +172,7 @@ $themename = wp_get_theme();
                     $message
                 );
                 add_option( 'triggered_welcomet', '1', '', 'yes' );
-          
+
 
 }
 }
@@ -190,13 +208,3 @@ function wp_maintenance_mode() {
 }
 add_action('get_header', 'wp_maintenance_mode');
 }
-
-// Custom Backend Footer
-add_filter('admin_footer_text', 'wp_bootstrap_custom_admin_footer');
-function wp_bootstrap_custom_admin_footer() 
-{
-    echo '<span id="footer-thankyou">Developed by <a href="http://www.midexigner.com" target="_blank">320press</a></span>. Built using <a href="https://underscores.me/" target="_blank">underscores.me</a>.';
-}
-// adding it to the admin area
-add_filter('admin_footer_text', 'wp_bootstrap_custom_admin_footer');
-
