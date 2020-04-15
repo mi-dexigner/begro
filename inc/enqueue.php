@@ -7,7 +7,7 @@
 function mi_load_scripts(){
 	 global $is_IE;
 	 wp_enqueue_style( 'style', THEMEROOT . '/style.css', array(), wp_get_theme()->Version, 'all' );
-	 wp_enqueue_style( 'style-dynamic', THEMEROOT . '/css/style_dynamic.php', array(), wp_get_theme()->Version, 'all' );
+
 
 	 wp_deregister_style( 'kc-icon-1-css' );
 

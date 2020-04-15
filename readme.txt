@@ -18,6 +18,9 @@ IMPORTANT: You should be making a child theme when using this theme.
 - sass - with rubyinstaller command (sass --watch styles.scss:styles.css)
 - susy -width global install command ()
 - compass sass - with global install command (gem install compass)
+- gem update --system
+- gem install sass
+- gem install compass
 - create config.rb and paste this code
 - project_type = :stand_alone
 - http_path = "/"
@@ -50,7 +53,7 @@ Initial release
 * slick Slider v1.2
 * Waypoints v4.0.1
 * Isotope v3.0.5
-* nicescroll v3.7.6 
+* nicescroll v3.7.6
 * jQuery One Page Nav v3.0.0
 * WOW v1.1.3
 * scrollup v2.4.1

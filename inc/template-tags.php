@@ -133,7 +133,7 @@ if(!function_exists('inner_page_banner')){
     <div class="row">
         <div class="col-md-6 px-0">
           <?php the_title( sprintf('<h1 class="display-4 font-italic"><a href="%s">', esc_url( get_permalink() ) ),'</a></h1>' ); ?>
-<?php mi_breadcrumb () ;?>
+<?php if(function_exists('mi_breadcrumb')){mi_breadcrumb();} ?>
         </div>
         </div>
   </div>
