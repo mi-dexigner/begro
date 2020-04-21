@@ -13,7 +13,7 @@
 
  <?php get_header(); ?>
 
-<?php inner_page_banner();?>
+ <?php inner_banner();?>
 
  <div class="main-content col-md-8" role='main'>
  	

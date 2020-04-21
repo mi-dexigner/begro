@@ -102,25 +102,6 @@ h2 {
     margin-bottom: 30px;
 }
 
-.btn-mi,
-a.btn-mi,
-.entry-content a.btn-mi {
-    @include animate( all, 320ms);
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 300;
-    color: $light-grey;
-    padding: 8px 12px;
-    border-radius: 0;
-    border: 1px solid $light-grey;
-    background-color: transparent;
-    &:hover,
-    &:focus {
-        color: #ffffff;
-        border-color: $dark-grey;
-        background-color: $dark-grey;
-    }
-}
 
 .entry-footer {
     padding: 10px 5px;
@@ -631,31 +612,6 @@ input.wpcf7-form-control.wpcf7-quiz,
     .form-submit {
         margin: 0;
         text-align: right;
-        [type="button"],
-        [type="reset"],
-        [type="submit"],
-        button {
-            color: #fff;
-            border-color: $primaryColorBtn;
-            font-size: 18px;
-            line-height: 63px;
-            height: 63px;
-            font-style: normal;
-            font-weight: 600;
-            background-color: $primaryColorBtn;
-            border-radius: 4px;
-            -moz-border-radius: 4px;
-            -webkit-border-radius: 4px;
-            letter-spacing: -0.8px;
-            text-transform: none;
-            border-width: 0px;
-            padding-left: 50px;
-            padding-right: 50px;
-            &:hover {
-                border-color: $primaryColorBtnHover;
-                background-color: $primaryColorBtnHover;
-            }
-        }
     }
     form {
         display: inline-block;

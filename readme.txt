@@ -2,7 +2,7 @@
 Contributors: MI Dexigner team
 Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Requires at least: 5.0
-Tested up to: WordPress 5.2.1
+Tested up to: WordPress 5.4
 Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,8 +19,13 @@ IMPORTANT: You should be making a child theme when using this theme.
 - susy -width global install command ()
 - compass sass - with global install command (gem install compass)
 - gem update --system
-- gem install sass
 - gem install compass
+- gem install css_parser
+- gem install susy
+- gem install sass
+
+ - run command `compass clean` some time clean the file
+ - run command `compass watch`
 - create config.rb and paste this code
 - project_type = :stand_alone
 - http_path = "/"
@@ -37,8 +42,8 @@ IMPORTANT: You should be making a child theme when using this theme.
 - color_output = true
 == Changelog ==
 
-= 1.0 =
-* Released: May 05, 2019
+= 1.0.5 =
+* Released: April 20, 2020
 
 Initial release
 

@@ -12,8 +12,7 @@
  ?>
 
  <?php get_header(); ?>
-
-<?php inner_page_banner();?>
+ <?php inner_banner();?>
 <!-- start content -->
 <div id="primary" class="content-area">
 

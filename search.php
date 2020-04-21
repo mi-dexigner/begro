@@ -13,7 +13,7 @@
 
  <?php get_header(); ?>
 
-<?php mi_featured_blog();?>
+ <?php inner_banner();?>
 
 <!-- start content -->
 <div id="primary" class="content-area">

@@ -1,6 +1,6 @@
 require 'compass/import-once/activate'
 # Require any additional compass plugins here.
-
+require 'susy'
 # Set this to the root of your project when deployed:
 project_type = :stand_alone
 cache_path = 'C:\temp\sass'
@@ -14,7 +14,7 @@ sourcemap = true
 line_comments = false
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
-output_style = :compact
+output_style = :expanded
 environment = :development
 color_output = true
 relative_assets = true # To enable relative paths to assets via compass helper functions.

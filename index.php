@@ -12,38 +12,9 @@
 ?>
 <?php get_header(); ?>
 
+<?php inner_banner();?>
 
 
-<?php mi_featured_blog();
-  $theParent = wp_get_post_parent_id(get_the_ID());
-$testArray = get_pages(
-  array(
-    'child_of' => get_the_ID()
-  )
-);
-if($theParent or $testArray){
-
-
-get_theme_file_uri('assets/img/logo.png');
-// the_title();
-// get_the_title();
-// the_ID();
-// get_the_ID();
-if($theParent){
-  $findChildrenOf = $theParent;
-}else{
-  $findChildrenOf = get_the_ID();
-}
-
-wp_list_pages($pageChild = array(
-  'title_li' => null,
-  //'child_of' =>$findChildrenOf
-) );
-}
-/* https://codex.wordpress.com
-https://developer.wordpress.com
-*/
-?>
 <!-- start content -->
 <div id="primary" class="content-area">
 

@@ -38,76 +38,15 @@ endif;
  /**
      * Main Featured Blog
      */
-if(!function_exists('mi_featured_blog')):
- function mi_featured_blog() {
- $args_cat = array(
-          'include' => '1'
-        );
 
-        $categories = get_categories($args_cat);
-        $count = 0;
-        $bullets = '';
-        foreach($categories as $category):
-
-          if(is_home()){
-            $args = array(
-            'type' => 'post',
-            'posts_per_page' => 1,
-            'category__in' => $category->term_id,
-            //'category__not_in' => array( 10 ),
-          );
-          }else{
-            $args = array(
-            'type' => 'page',
-            'posts_per_page' => 1,
-            'category__in' => $category->term_id,
-            //'category__not_in' => array( 10 ),
-          );
-          }
-
-          $featuredBlog = new WP_Query( $args );
-
-          if( $featuredBlog->have_posts() ):
-
-            while( $featuredBlog->have_posts() ): $featuredBlog->the_post();
-              $urlImg ='';
-            if( has_post_thumbnail() ):
-              $urlImg = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
-            else:
-                $urlImg = get_theme_file_uri('img/bannerbg.jpg');
-            endif;  ?>
-<section class="page-header ">
-  <div class="jumbotron text-white  border-0" data-imgurl="<?php echo $urlImg; ?>" >
-  <div class="container">
-    <div class="row">
-        <div class="col-md-6 px-0">
-          <?php the_title( sprintf('<h1><a href="%s">', esc_url( get_permalink() ) ),'</a></h1>' ); ?>
-          <small><?php the_category(' '); ?></small>
-          <?php ((is_single())?mi_breadcrumb():'');?>
-          <?php if(!is_single() && is_home()): ?>
-          <p class="lead my-3"><?php the_excerpt(); ?></p>
-         <?php endif; ?>
-        </div>
-        </div>
-  </div>
-      </div>
-</section>
- <?php endwhile;
-
-          endif;
-
-          wp_reset_postdata();
-
-        endforeach;  }
- endif;
 
 
 /*
 * Inner page banner
 */
 
-if(!function_exists('inner_page_banner')){
-  function inner_page_banner(){
+if(!function_exists('inner_banner')){
+  function inner_banner(){
     $category = get_category( get_query_var( 'cat' ) );
     @$cat_id = ($category->cat_ID?$category->cat_ID :'');
     $image_id = get_term_meta ( $cat_id, 'category-image-id', true );
@@ -132,7 +71,7 @@ if(!function_exists('inner_page_banner')){
   <div class="container">
     <div class="row">
         <div class="col-md-6 px-0">
-          <?php the_title( sprintf('<h1 class="display-4 font-italic"><a href="%s">', esc_url( get_permalink() ) ),'</a></h1>' ); ?>
+          <?php the_title( sprintf('<h2 class="banner-title"><a href="%s">', esc_url( get_permalink() ) ),'</a></h2>' ); ?>
 <?php if(function_exists('mi_breadcrumb')){mi_breadcrumb();} ?>
         </div>
         </div>

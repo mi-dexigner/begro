@@ -3,6 +3,8 @@ body {
     font-size: $base-font-size;
     font-weight: 400;
     line-height: normal;
+    line-height: 1.5;
+    background-color: #fff;
 }
 
 a {
@@ -246,4 +248,53 @@ p {
         color:$light-grey;
       }
     }
+}
+[type="button"],
+[type="reset"],
+[type="submit"],
+button,
+.btn-mi,
+a.btn-mi,
+.entry-content a.btn-mi {
+    @include animate( all, 320ms);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+    color: $light-grey;
+    padding: 8px 12px;
+    border-radius: 0;
+    border: 1px solid $light-grey;
+    background-color: transparent;
+    &:hover,
+    &:focus {
+        color: #ffffff;
+        border-color: $dark-grey;
+        background-color: $dark-grey;
+    }
+}
+
+// Susy Settings
+$susy:(
+    columns: 12,  // The number of columns in your grid
+    gutters: 1/4, // The size of a gutter in relation to a single column
+    global-box-sizing: border-box ,
+    math: fluid,
+  output: float,
+  gutter-position:split,
+    );
+.mi_container{
+    @include container(80%);
+    background-color: #eeeeee;
+    // margin-left: span(2) + gutter();
+    // margin-right: gutter()
+}
+
+.mi_container main{
+@include span(8);
+}
+.mi_container aside{
+// @include span(4 at 9);
+@include span(4 last);
+
 }

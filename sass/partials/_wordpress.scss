@@ -313,7 +313,6 @@ input:lang(ary)[type="submit"],
     }
 
     .search-submit {
-        right           : 0;
         border          : none;
         outline         : 0;
         font-family     : Simple-Line-Icons;
@@ -323,8 +322,6 @@ input:lang(ary)[type="submit"],
         color           : #fff;
         background-color: $primaryColor;
         font-size       : 18px;
-        bottom          : 15px;
-        position        : absolute;
 
         i {
             font-size: 16px;

@@ -3,7 +3,18 @@
     let mediaTablete = window.matchMedia("(max-width: 768px)");
 
     $('[href="#"]:not(.dropdown-toggle)').attr("href", "javascript:;");
-    
+    // Bootstrap Default dropdown clickable Function Disabled
+$('.dropdown-toggle').on('click', function(event){event.stopPropagation();});
+// Bootstrap Default dropdown HoVer Function Enable
+	$(".dropdown").hover(            
+				function() {
+					$('.dropdown-menu', this).stop( true, true ).fadeIn("fast");
+					$(this).toggleClass('open');
+				},
+				function() {
+					$('.dropdown-menu', this).stop( true, true ).fadeOut("fast");
+					$(this).toggleClass('open');
+				}); 
     $(window).on('load', function() {
         $("#mi-loader").delay(1000).fadeOut("slow", function() {
             $("#mi-loader").remove();
@@ -33,16 +44,6 @@
     });*/
     // custom scrollbar
     // 
-    $("body").niceScroll({
-        styler: "fb",
-        cursorcolor: "#4886ff", // change cursor color in hex
-        cursorwidth: "8px", // cursor width in pixel (you can also write "5px")
-        cursorborderradius: "0px", // border radius in pixel for cursor 
-        background: '#7f7f7f', // change css for rail background
-        cursorborder: '', // css definition for cursor border : 1px solid #fff
-        autohidemode: false, // how hide the scrollbar works, possible values: 
-        smoothscroll: true, // scroll with ease movement
-    });
 
     // One Page Nav
     var top_offset = $('.site-header').height() - 10;
